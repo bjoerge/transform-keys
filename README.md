@@ -1,4 +1,4 @@
-# Key-trans
+# transform-keys
 
 Recursively transform object keys with a custom key transform strategy
 
@@ -8,7 +8,7 @@ Recursively transform object keys with a custom key transform strategy
 ### Alternative 1
 
 ```js
-var transform = require("key-transform"); 
+var transform = require("transform-keys"); 
 
 var snake = {
   a_snake_cased_key: {
@@ -36,7 +36,7 @@ assert.deepEqual(transformed, {
 ### Create custom key transformers
 
 ```js
-var transform = require("key-transform"); 
+var transform = require("transform-keys"); 
 
 var camelify = transform(function (key) {
   return key.replace(/_([a-z]{1})/ig, function (_, $1) {
