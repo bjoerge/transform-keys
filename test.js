@@ -1,8 +1,8 @@
 var test = require("tap").test;
 
-var transform = require("./"); 
+var transform = require("./");
 
-test('inline transform', function(t) {
+test('inline transform', function (t) {
   var snake = {
     a_snake_cased_key: {
       foo_bar_baz: "qux",
@@ -27,7 +27,7 @@ test('inline transform', function(t) {
 });
 
 
-test('create custom transform functions', function(t) {
+test('create custom transform functions', function (t) {
   var camelify = transform(function (key) {
     return key.replace(/_([a-z])/ig, function (_, $1) {
       return $1.toUpperCase();
@@ -36,13 +36,16 @@ test('create custom transform functions', function(t) {
 
   var snakeify = transform(function (key) {
     return key.replace(/([A-Z])/g, function (_, $1) {
-      return '_'+$1.toLowerCase();
+      return '_' + $1.toLowerCase();
     });
   });
 
   var now = new Date();
 
-  function func() {}
+  function func() {
+  }
+
+  var regex = /foo/ig;
 
   var snakeKeys = {
     foo_bar_baz: "qux",
@@ -51,21 +54,49 @@ test('create custom transform functions', function(t) {
     foo_func: func,
     foo: {
       bar_baz: "qux",
+      bar_baz_regex: regex,
       qux: null,
-      arr: [1, 2, 3, 4]
+      arr: [1, 2, 3, 4],
+      arr_of_objects: [
+        {
+          foo_bar: "foo"
+        },
+        "some string",
+        {
+          another_array: [
+            {
+              foo_bar: "foo"
+            }
+          ]
+        }
+      ]
     },
     date: now
   };
 
-  var camelKeys =   {
+  var camelKeys = {
     fooBarBaz: "qux",
     fooBar_42: "42",
     "fooBar-42": "42",
     fooFunc: func,
     foo: {
+      barBazRegex: regex,
       barBaz: 'qux',
       qux: null,
-      arr: [1, 2, 3, 4]
+      arr: [1, 2, 3, 4],
+      arrOfObjects: [
+        {
+          fooBar: "foo"
+        },
+        "some string",
+        {
+          anotherArray: [
+            {
+              fooBar: "foo"
+            }
+          ]
+        }
+      ]
     },
     date: now
   };

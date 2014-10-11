@@ -7,7 +7,10 @@ module.exports = function(object, transformKeyFn) {
 
 function transform(transformKeyFn) {
   return function transformKeys(object) {
-    if (!object || Array.isArray(object) || typeof object !== 'object') {
+    if (Array.isArray(object)) {
+      return object.map(transformKeys);
+    }
+    if (!object || typeof object !== 'object') {
       return object;
     }
     var keys = Object.keys(object);
