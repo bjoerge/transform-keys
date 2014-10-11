@@ -19,7 +19,7 @@ var snake = {
 };
 
 var transformed = transform(snake, function (key) {
-  return key.replace(/_([a-z]{1})/ig, function (_, $1) {
+  return key.replace(/_([a-z])/ig, function (_, $1) {
     return $1.toUpperCase();
   });
 });
@@ -39,13 +39,13 @@ assert.deepEqual(transformed, {
 var transform = require("transform-keys"); 
 
 var camelify = transform(function (key) {
-  return key.replace(/_([a-z]{1})/ig, function (_, $1) {
+  return key.replace(/_([a-z])/ig, function (_, $1) {
     return $1.toUpperCase();
   });
 });
 
 var snakeify = transform(function (key) {
-  return key.replace(/([A-Z]{1})/g, function (_, $1) {
+  return key.replace(/([A-Z])/g, function (_, $1) {
     return '_'+$1.toLowerCase();
   });
 });

@@ -12,7 +12,7 @@ test('inline transform', function(t) {
   };
 
   var transformed = transform(snake, function (key) {
-    return key.replace(/_([a-z]{1})/ig, function (_, $1) {
+    return key.replace(/_([a-z])/ig, function (_, $1) {
       return $1.toUpperCase();
     });
   });
@@ -29,13 +29,13 @@ test('inline transform', function(t) {
 
 test('create custom transform functions', function(t) {
   var camelify = transform(function (key) {
-    return key.replace(/_([a-z]{1})/ig, function (_, $1) {
+    return key.replace(/_([a-z])/ig, function (_, $1) {
       return $1.toUpperCase();
     });
   });
 
   var snakeify = transform(function (key) {
-    return key.replace(/([A-Z]{1})/g, function (_, $1) {
+    return key.replace(/([A-Z])/g, function (_, $1) {
       return '_'+$1.toLowerCase();
     });
   });
