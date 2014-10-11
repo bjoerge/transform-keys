@@ -1,6 +1,6 @@
 {
   "name": "transform-keys",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Recursively transform object keys with a custom key transform strategy",
   "main": "index.js",
   "scripts": {
