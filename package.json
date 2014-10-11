@@ -1,0 +1,31 @@
+{
+  "name": "transform-keys",
+  "version": "0.0.0",
+  "description": "Recursively transform object keys with a custom key transform strategy",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bjoerge/transform-keys"
+  },
+  "keywords": [
+    "transform",
+    "key",
+    "keys",
+    "snakecase",
+    "camelcase",
+    "recursive",
+    "object"
+  ],
+  "author": "Bjørge Næss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjoerge/transform-keys/issues"
+  },
+  "homepage": "https://github.com/bjoerge/transform-keys",
+  "devDependencies": {
+    "tap": "^0.4.13"
+  }
+}
