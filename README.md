@@ -2,10 +2,7 @@
 
 Recursively transform object keys with a custom key transform strategy
 
-## Example
-
-
-### Alternative 1
+## Usage
 
 ```js
 var transform = require("transform-keys"); 
@@ -33,7 +30,7 @@ assert.deepEqual(transformed, {
 
 ```
 
-### Create custom key transformers
+### Custom key transformers
 
 ```js
 var transform = require("transform-keys"); 
